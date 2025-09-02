@@ -1,52 +1,113 @@
-# Stellar Shop — Full-Stack E‑commerce (Flutter + Node + Mongo)
+# 🛒 StellarShop — Full-Stack E-Commerce App
 
-A production-style, resume‑worthy shopping app with:
-- Flutter mobile client (Provider, HTTP)
-- Node.js + Express API (JWT auth, Products, Cart, Orders)
-- MongoDB (Atlas/local), Docker support
-- Seed script for demo products
+> **Cross-platform online shopping application** built with **Flutter + Dart** (frontend) and **Node.js + Express + MongoDB** (backend).  
+> Designed for a **seamless shopping experience** with modern features like authentication, product catalog, cart, orders, and scalable APIs.  
+> Future-ready with support for **AI recommendations, AR product preview, payment gateways, and admin analytics dashboard**.
 
-## 1) Quick Start with Docker
-```bash
-cd backend
-docker compose up --build
-# API on http://localhost:8080, Mongo on 27017
+---
+
+## 🚀 Features
+
+✅ Cross-platform app (Android/iOS) built in **Flutter**  
+✅ Product listing with **search, filters & categories**  
+✅ **Add-to-Cart** and checkout workflow  
+✅ Secure **user authentication (JWT / Firebase Auth)**  
+✅ Order management + **real-time notifications**  
+✅ RESTful API backend with **Node.js + Express**  
+✅ Cloud database with **MongoDB Atlas**  
+✅ Extensible for **Stripe/PayPal/Razorpay payments**  
+✅ Future support for:
+- AI-powered recommendations (TensorFlow Lite)  
+- AR product preview (ARCore/ARKit)  
+- Chatbot (Dialogflow/Rasa)  
+- Admin dashboard with analytics  
+
+---
+
+## 🏗️ Architecture
+
+```
+Flutter App (Frontend)
+   ├── Product Catalog
+   ├── Cart & Checkout
+   ├── Auth Screens
+   └── API Integration
+          │
+          ▼
+Node.js + Express API (Backend)
+   ├── Auth Service (JWT/Firebase)
+   ├── Product Service (CRUD, stock)
+   ├── Cart & Order Service
+   ├── Payment Integration (future)
+   └── Analytics & Notifications
+          │
+          ▼
+MongoDB Atlas / Firestore (Database)
+   ├── Users
+   ├── Products
+   ├── Orders
+   └── ML Data Store
 ```
 
-Seed products (optional):
-```bash
-# in another terminal (same folder)
-node src/seed.js
-```
+---
 
-## 2) Run Backend Locally (no Docker)
+## ⚙️ Tech Stack
+
+**Frontend:** Flutter, Dart, Provider, HTTP  
+**Backend:** Node.js, Express, JWT, Bcrypt  
+**Database:** MongoDB Atlas / Firebase Firestore  
+**DevOps:** Docker, Docker Compose  
+**Future Integrations:** Stripe, PayPal, Razorpay, TensorFlow Lite, ARCore/ARKit  
+
+---
+
+## 📦 Getting Started
+
+### 🔹 Backend
 ```bash
 cd backend
-cp .env.example .env
+cp .env.example .env   # add MongoDB/Stripe keys here
 npm install
 npm run dev
 ```
-Update `.env` with your Mongo connection + JWT secret.
+Runs API at: `http://localhost:8080`
 
-### REST Endpoints
-- `POST /api/auth/register {name,email,password}`
-- `POST /api/auth/login {email,password}` → returns `{token}`
-- `GET  /api/products?q=&category=&sort=newest|price_asc|price_desc|rating`
-- `GET  /api/products/:id`
-- `GET  /api/cart` (Auth)
-- `POST /api/cart/add {productId, qty}` (Auth)
-- `POST /api/cart/remove {productId}` (Auth)
-- `POST /api/cart/clear` (Auth)
-- `POST /api/orders {address}` (Auth)
-- `GET  /api/orders` (Auth)
+### 🔹 Seed Database (optional)
+```bash
+node src/seed.js
+```
 
-Auth header: `Authorization: Bearer <token>`
-
-## 3) Run Flutter App
+### 🔹 Flutter App
 ```bash
 cd flutter_app
 flutter pub get
 flutter run
 ```
-The app fetches from `http://localhost:8080` (see `providers/product_provider.dart`).
 
+---
+
+## 📊 Roadmap
+- [x] Core shopping flows (products, cart, checkout)  
+- [x] Auth & JWT integration  
+- [x] Order placement & storage  
+- [ ] Payment gateway integration  
+- [ ] Push notifications (FCM)  
+- [ ] AI recommendation engine  
+- [ ] AR product preview  
+- [ ] Admin analytics dashboard  
+
+---
+
+## 📸 Screenshots (Coming Soon!)
+*(Add screenshots/gifs once UI is ready)*  
+
+---
+
+## 👨‍💻 Author
+**Ramji Yadav**  
+📌 Final Year B.Tech, Civil Engineering @ IIT Kanpur  
+🔗 [LinkedIn](https://www.linkedin.com/in/ramji-yadav-iitk/) | [GitHub](https://github.com/rjydviitk)
+
+---
+
+✨ If you like this project, don’t forget to ⭐ the repo!
